@@ -4,22 +4,15 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -28,6 +21,13 @@ import com.onesignal.OneSignal;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import app.opass.ccip.R;
 import app.opass.ccip.activity.CaptureActivity;
 import app.opass.ccip.activity.MainActivity;
@@ -124,8 +124,8 @@ public class MainFragment extends Fragment {
                 integrator.initiateScan();
             }
         });
-        scenarioView = (RecyclerView) view.findViewById(R.id.scenarios);
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        scenarioView = view.findViewById(R.id.scenarios);
+        swipeRefreshLayout = view.findViewById(R.id.swipeContainer);
 
         mActivity = getActivity();
         scenarioView.setLayoutManager(new LinearLayoutManager(mActivity));

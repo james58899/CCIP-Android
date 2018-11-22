@@ -1,4 +1,3 @@
-
 package app.opass.ccip.model;
 
 import android.content.Context;

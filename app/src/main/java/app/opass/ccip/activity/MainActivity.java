@@ -5,22 +5,22 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import app.opass.ccip.R;
 import app.opass.ccip.fragment.AnnouncementFragment;
 import app.opass.ccip.fragment.IRCFragment;
@@ -58,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
         mActivity = this;
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        userTitleTextView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.user_title);
-        userIdTextView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.user_id);
+        navigationView = findViewById(R.id.nav_view);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        userTitleTextView = navigationView.getHeaderView(0).findViewById(R.id.user_title);
+        userIdTextView = navigationView.getHeaderView(0).findViewById(R.id.user_id);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
 
         setSupportActionBar(toolbar);
         setupDrawerContent(navigationView);

@@ -4,12 +4,6 @@ import android.app.Activity;
 import android.graphics.PorterDuff.Mode;
 import android.os.Build.VERSION;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import java.text.ParseException;
@@ -30,6 +25,10 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 import app.opass.ccip.R;
 import app.opass.ccip.adapter.ScheduleTabAdapter;
 import app.opass.ccip.model.Submission;
@@ -58,14 +57,14 @@ public class ScheduleTabFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_schedule_tab, container, false);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
-        tabLayout = (TabLayout) view.findViewById(R.id.tabs);
-        viewPager = (ViewPager) view.findViewById(R.id.pager);
+        swipeRefreshLayout = view.findViewById(R.id.swipeContainer);
+        tabLayout = view.findViewById(R.id.tabs);
+        viewPager = view.findViewById(R.id.pager);
 
         mActivity = getActivity();
 
         if (VERSION.SDK_INT >= 21) {
-            ((AppBarLayout) mActivity.findViewById(R.id.appbar)).setElevation(0);
+            mActivity.findViewById(R.id.appbar).setElevation(0);
         }
 
         setHasOptionsMenu(true);

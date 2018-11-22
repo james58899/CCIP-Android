@@ -1,23 +1,20 @@
 package app.opass.ccip.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import app.opass.ccip.fragment.SpeakerFragment;
 import app.opass.ccip.model.Speaker;
 
 public class SpeakerImageAdapter extends FragmentStatePagerAdapter {
-    private List<Speaker> speakers = new ArrayList<>();
     private List<Fragment> mFragmentList = new ArrayList<>();
 
     public SpeakerImageAdapter(FragmentManager fm, List<Speaker> speakers) {
         super(fm);
-        this.speakers = speakers;
-        for (Speaker speaker : this.speakers) {
+        for (Speaker speaker : speakers) {
             mFragmentList.add(SpeakerFragment.newInstance(speaker));
         }
     }

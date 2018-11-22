@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +14,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import app.opass.ccip.R;
 import app.opass.ccip.network.webclient.WebChromeViewClient;
 
@@ -33,9 +33,9 @@ public class IRCFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_web, container, false);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar = view.findViewById(R.id.progressBar);
 
-        webView = (WebView) view.findViewById(R.id.webView);
+        webView = view.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {

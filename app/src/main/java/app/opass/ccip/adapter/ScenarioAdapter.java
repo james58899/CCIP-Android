@@ -5,11 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +17,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import app.opass.ccip.R;
 import app.opass.ccip.activity.CountdownActivity;
 import app.opass.ccip.model.Attendee;
@@ -36,7 +35,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ScenarioAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ScenarioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final SimpleDateFormat SDF = new SimpleDateFormat("MM/dd HH:mm");
     private static final String FORMAT_TIMERANGE = "%s ~ %s";
@@ -201,11 +200,11 @@ public class ScenarioAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            scenarioIcon = (ImageView) itemView.findViewById(R.id.icon);
-            tickIcon = (ImageView) itemView.findViewById(R.id.tick);
-            scenarioName = (TextView) itemView.findViewById(R.id.scenario_name);
-            allowTimeRange = (TextView) itemView.findViewById(R.id.allow_time_range);
-            card = (CardView) itemView.findViewById(R.id.card);
+            scenarioIcon = itemView.findViewById(R.id.icon);
+            tickIcon = itemView.findViewById(R.id.tick);
+            scenarioName = itemView.findViewById(R.id.scenario_name);
+            allowTimeRange = itemView.findViewById(R.id.allow_time_range);
+            card = itemView.findViewById(R.id.card);
         }
     }
 }

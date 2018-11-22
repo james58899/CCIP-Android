@@ -2,12 +2,6 @@ package app.opass.ccip.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +9,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import app.opass.ccip.R;
 import app.opass.ccip.adapter.AnnouncementAdapter;
 import app.opass.ccip.model.Announcement;
@@ -35,8 +35,8 @@ public class AnnouncementFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         final View view = inflater.inflate(R.layout.fragment_announcement, container, false);
 
-        announcementView = (RecyclerView) view.findViewById(R.id.announcement);
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        announcementView = view.findViewById(R.id.announcement);
+        swipeRefreshLayout = view.findViewById(R.id.swipeContainer);
 
         mActivity = getActivity();
         announcementView.setLayoutManager(new LinearLayoutManager(mActivity));

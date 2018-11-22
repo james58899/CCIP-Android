@@ -1,10 +1,6 @@
 package app.opass.ccip.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +14,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import app.opass.ccip.R;
 import app.opass.ccip.model.Submission;
 
-public class ScheduleAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class ScheduleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final SimpleDateFormat SDF = new SimpleDateFormat("HH:mm");
 
@@ -75,8 +74,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            startTimeText = (TextView) itemView.findViewById(R.id.start_time);
-            submissionView = (RecyclerView) itemView.findViewById(R.id.programs);
+            startTimeText = itemView.findViewById(R.id.start_time);
+            submissionView = itemView.findViewById(R.id.programs);
         }
     }
 }

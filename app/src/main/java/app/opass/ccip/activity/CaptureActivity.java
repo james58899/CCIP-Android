@@ -5,10 +5,9 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
 import com.google.zxing.FormatException;
@@ -24,6 +23,7 @@ import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
 import java.io.IOException;
 
+import androidx.appcompat.app.AppCompatActivity;
 import app.opass.ccip.R;
 
 public class CaptureActivity extends AppCompatActivity {
